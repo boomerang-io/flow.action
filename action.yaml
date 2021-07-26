@@ -24,3 +24,12 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://boomerangio/flow.action:latest'
+  args:
+    - flow
+    - run
+  env:
+    FLOW_URL: {{ inputs.url }}
+    FLOW_TOKEN: {{ inputs.token }}
+    FLOW_WORKFLOW_ID: {{ inputs.workflowId }}
+    FLOW_TOPIC: {{ inputs.topic }}
+    FLOW_PAYLOAD: {{ inputs.payload }}

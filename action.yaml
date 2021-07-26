@@ -24,6 +24,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://boomerangio/flow.action:latest'
+  working-directory: /cli
   args:
     - flow
     - run

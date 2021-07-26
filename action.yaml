@@ -1,0 +1,26 @@
+name: Boomerang Flow Run Workflow
+description: Trigger a workflow to execute
+author: 'Boomerang'
+branding:
+  icon: play-circle
+  color: blue
+
+inputs:
+  url:
+    description: The Boomerang Flow event URL and context
+    required: true
+  token:
+    description: The security token as part of your workflow
+    required: true
+  workflowId:
+    description: The ID of the workflow you wish to execute
+    required: true
+  topic:
+    description: The custom topic entered into your worlflow configuration
+    required: true
+  payload:
+    description: The JSON payload to send with the event
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

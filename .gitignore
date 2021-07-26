@@ -1,0 +1,15 @@
+# Dependency directory
+node_modules/
+
+# Editor
+.DS_Store
+*.swp
+.idea
+.vscode
+.project
+.settings
+
+# Coverage directory used by tools like istanbul, also includes default junit
+# output file
+coverage
+/junit.xml

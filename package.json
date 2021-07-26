@@ -1,0 +1,95 @@
+{
+  "name": "flow.action",
+  "version": "0.1.0",
+  "description": "Boomerang Flow GitHub Action",
+  "repository": "git@github.com:boomerang-io/flow.action.git",
+  "author": "Tyson Lawrie <tyson@lawrie.com.au>",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@boomerang-io/worker-cli": "^0.8.15",
+    "@boomerang-io/worker-core": "^1.3.6"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=local boomerang-worker-cli",
+    "dev:debug": "cross-env NODE_ENV=local DEBUG=true boomerang-worker-cli",
+    "format": "prettier --write \"**/*.{js,json,md,yml}\"",
+    "lint": "eslint **/*.js",
+    "start": "boomerang-worker-cli",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "^4.2.5",
+    "jest": "^25.3.0",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.{js,json,css,md}": [
+      "prettier --print-width 120 --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "ci",
+          "chore",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "test"
+        ]
+      ]
+    }
+  },
+  "eslintConfig": {
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "commonjs": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:node/recommended"
+    ],
+    "rules": {
+      "no-process-exit": "off"
+    },
+    "ignorePatterns": [
+      "node_modules"
+    ]
+  }
+}

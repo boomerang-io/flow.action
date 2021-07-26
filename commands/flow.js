@@ -1,14 +1,19 @@
 "use strict";
 
-const { log, utils } = require("@boomerang-io/worker-core");
+const { log } = require("@boomerang-io/worker-core");
 const fetch = require("node-fetch");
 const { CloudEvent, HTTP } = require("cloudevents");
 
 async function run() {
   log.sys("Hello from Boomerang Flow");
 
-  const taskProps = utils.resolveInputParameters();
-  const { url, token, workflowId, topic, payload } = taskProps;
+  const {
+    FLOW_URL: url,
+    FLOW_TOKEN: token,
+    FLOW_WORKFLOW_ID: workflowId,
+    FLOW_TOPIC: topic,
+    FLOW_PAYLOAD: payload,
+  } = process.env;
 
   //validate mandatory fields
   if (!url) {

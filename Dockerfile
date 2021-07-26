@@ -11,4 +11,4 @@ ADD ./package.json ./package-lock.json ./
 ADD ./commands ./commands
 RUN npm install --production
 
-ENTRYPOINT [ "npm", "start" ]
+ENTRYPOINT [ "npm", "--prefix", "/cli", "start" ]

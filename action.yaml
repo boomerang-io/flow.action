@@ -23,4 +23,4 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://boomerangio/flow.action:latest'

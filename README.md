@@ -1,6 +1,6 @@
 # Boomerang Flow GitHub Action
 
-This action will run a workflow in Boomerang Flow
+This action will run a workflow in Boomerang Flow by publishing a `CloudEvent` to the event listener.
 
 ## Inputs
 

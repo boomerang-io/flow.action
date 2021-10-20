@@ -22,7 +22,7 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'docker://boomerangio/flow-action:v6.0.2'
+  image: 'docker://boomerangio/flow-action:v0.6.2'
   args:
     - flow
     - run

@@ -8,15 +8,12 @@ inputs:
   url:
     description: The Boomerang Flow event URL and context
     required: true
-    default: '${{ secrets.FLOW_URL }}'
   token:
     description: The security token as part of your workflow
     required: true
-    default:  '${{ secrets.FLOW_WORKFLOW_TOKEN }}'
   workflowId:
     description: The ID of the workflow you wish to execute
     required: true
-    default:  '${{ secrets.FLOW_WORKFLOW_ID }}'
   topic:
     description: The custom topic entered into your worlflow configuration
     required: true
@@ -26,7 +23,7 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'docker://boomerangio/flow-action:v0.6.2'
+  image: 'docker://boomerangio/flow-action:v0.6.4'
   args:
     - flow
     - run

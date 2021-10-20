@@ -46,7 +46,7 @@ async function run() {
     process.exit(1);
   }
   
-  const eventData = checkForJson(payload) : payload ? JSON.stringify(payload);
+  const eventData = (checkForJson(payload) ? payload : JSON.stringify(payload));
 
   const event = new CloudEvent({
     subject: "/" + workflowId + "/" + topic,

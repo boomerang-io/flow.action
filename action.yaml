@@ -4,7 +4,6 @@ author: 'Boomerang'
 branding:
   icon: play-circle
   color: blue
-
 inputs:
   url:
     description: The Boomerang Flow event URL and context
@@ -23,7 +22,7 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'docker://boomerangio/flow.action:latest'
+  image: 'docker://boomerangio/flow-action:v6.0.2'
   args:
     - flow
     - run

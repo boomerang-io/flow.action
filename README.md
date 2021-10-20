@@ -16,4 +16,12 @@ Find more information at our [documentation](https://www.useboomerang.io/docs/bo
 
 ## How to set up your Workflow
 
-In your Boomerang Flow instance, for the Workflow you wish to run, navigate to the Edit Workflow > Configuration > Triggers and enable the Event trigger.
+In your Boomerang Flow instance, for the Workflow you wish to run
+
+1. Navigate to the Edit Workflow > Configuration > Triggers and enable the Custom Event trigger.
+2. Set the Topic to the value you will specify in the Inputs mentioned above.
+3. Hit Save.
+
+# Release Management
+
+When creating new versions of this GitHub Action, you will need to navigate to the action.yaml and update the version of the container to match.

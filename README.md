@@ -9,7 +9,7 @@ This action will run a workflow in Boomerang Flow by publishing a `CloudEvent` t
 | URL         | The Boomerang Flow event URL.                                                | `https://<host>/flow/services/listener/event` | true     |
 | Token       | The security token as part of your workflow                                  |                                               | true     |
 | Workflow ID | The ID of the workflow that you want to run.                                 |                                               | true     |
-| Topic       | This is entered in the Workflow configuration when you enable a Custom event |                                               | true     |
+| Topic       | This is entered in the Workflow configuration when you enable a Custom event | 'GitHub'                                      | true     |
 | Payload     | The JSON payload you would like sent.                                        |                                               | false    |
 
 Find more information at our [documentation](https://www.useboomerang.io/docs/boomerang-flow/architecture/eventing-architecture)
